@@ -2,7 +2,7 @@ name: Test
 on:
   workflow_dispatch:
     inputs:
-      Path:
+      Input:
         description: 'Test input'
         required: true
         type: string
@@ -13,4 +13,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Test
-        run: echo "${{inputs.Path}}"
+        run: echo "${{inputs.Input}}" > Test.sh && bash Test.sh

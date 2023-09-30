@@ -1,0 +1,16 @@
+name: Test
+on:
+  workflow_dispatch:
+    inputs:
+      Path:
+        description: 'Test input'
+        required: true
+        type: string
+jobs:
+  Test:
+    name: Test
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test
+        run: echo "${{inputs.Path}}"

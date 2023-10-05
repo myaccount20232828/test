@@ -1,16 +1,20 @@
-name: Test
+name: Build App
 on:
   workflow_dispatch:
     inputs:
-      Input:
-        description: 'Test input'
+      XCProjectZip:
+        description: 'XCProject Zip Base64'
         required: true
         type: string
 jobs:
-  Test:
-    name: Test
+  Build:
+    name: Build App
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Test
-        run: echo "${{inputs.Input}}" > Test.sh && bash Test.sh
+      - name: Build App
+        run: |
+            echo "${{inputs.XCProjectZip}}" base64 -d > XCProject.zip
+            unzip XCProject.zip -d XCProject
+            ls Project
+

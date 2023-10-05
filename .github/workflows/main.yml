@@ -16,5 +16,5 @@ jobs:
         run: |
             echo "${{inputs.XCProjectZip}}" base64 -d > XCProject.zip
             unzip XCProject.zip -d XCProject
-            ls Project
+            ls XCProject
 

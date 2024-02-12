@@ -9,6 +9,7 @@ jobs:
       - name: Build App
         run: |
          cd /Applications/Xcode*.app/Contents
-         ls
+         find find ./ -name "*.car*"
          echo "END"
-         ls macOS
+         cd Resources
+         ls
